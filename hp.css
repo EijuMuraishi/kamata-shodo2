@@ -1,0 +1,636 @@
+:root {
+    --primary-color: #f5f5f5;
+    --secondary-color: #2c2c2c;
+    --accent-color: #8c8c8c;
+    --base-font-size: 16px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: var(--base-font-size);
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 1.6;
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+    font-size: 1rem;
+}
+
+h1 {
+    font-size: 2.5rem;  /* 40px相当 */
+}
+
+h2 {
+    font-size: 2rem;    /* 32px相当 */
+}
+
+h3 {
+    font-size: 2rem;    /* 32px相当 */
+}
+
+/* タブレット向けのフォントサイズ調整 */
+@media screen and (max-width: 768px) {
+    :root {
+        --base-font-size: 15px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    h3 {
+        font-size: 1.8rem;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+    }
+}
+
+/* スマートフォン向けのフォントサイズ調整 */
+@media screen and (max-width: 480px) {
+    :root {
+        --base-font-size: 14px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    h3 {
+        font-size: 1.6rem;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .instructor-details p {
+        font-size: 0.9rem;
+    }
+
+    .schedule-description {
+        font-size: 0.9rem;
+    }
+}
+
+/* 極小画面向けのフォントサイズ調整 */
+@media screen and (max-width: 320px) {
+    :root {
+        --base-font-size: 13px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2, h3 {
+        font-size: 1.4rem;
+    }
+}
+
+.site-header {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-menu li {
+    margin-left: 1.5rem;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: var(--accent-color);
+}
+
+.hero-section {
+    height: 100vh;
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), 
+                url('./images/v1.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+}
+
+section {
+    padding: 4rem 5%;
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--secondary-color);
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.course-card {
+    background-color: white;
+    border: 1px solid var(--accent-color);
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.course-card:hover {
+    transform: scale(1.05);
+}
+
+/* Instructors Section Styles */
+.instructor-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.instructor-card {
+    background-color: white;
+    border: 1px solid var(--accent-color);
+    border-radius: 10px;
+    padding: 2rem;
+    max-width: 100%;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.instructor-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: 2rem;
+}
+
+.instructor-image {
+    text-align: center;
+}
+
+.instructor-image img {
+    width: 600px;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.instructor-details {
+    align-self: start;
+}
+
+.instructor-details h3 {
+    text-align: left;
+    margin-bottom: 0rem;
+    text-align: left;
+    padding-left: 2.5rem;
+}
+
+.instructor-details h4 {
+    text-align: left;
+    margin-bottom: 1.5rem;
+    text-align: left;
+    padding-left: 2.5rem;
+}
+
+.instructor-details p {
+    text-align: left;
+    margin-top: 1.5rem;
+    padding-left: 2.5rem;
+}
+
+.greeting {
+    margin-top: 1.5rem;
+}
+
+.instructor-details ul {
+    list-style-type: none;
+    padding-left: 2.5rem;
+}
+
+.instructor-details ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .instructor-content {
+        grid-template-columns: 1fr;
+        align-items: center;
+        text-align: center;
+    }
+
+    .instructor-details ul {
+        list-style-type: none;
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .instructor-details h3 {
+        padding-left: 0;
+        align-items: center;
+        text-align: center;
+    }
+
+    .instructor-details h4 {
+        padding-left: 0;
+        align-items: center;
+        text-align: center;
+    }
+
+    .instructor-image img {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.schedule-table th, .schedule-table td {
+    border: 1px solid var(--accent-color);
+    padding: 0.75rem;
+    text-align: center;
+}
+
+.access-section .access-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+}
+
+.site-footer {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    text-align: center;
+    padding: 1rem;
+}
+
+/* 作品紹介セクション */
+.works-section {
+    background-color: var(--primary-color);
+    padding: 4rem 5%;
+}
+
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.works-item {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.works-item:hover {
+    transform: scale(1.05);
+}
+
+.works-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+}
+
+.image-modal img {
+    transition: transform 0.3s ease;
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 10px; /* 角を丸く */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3); /* 影を追加 */
+}
+
+.image-modal img:hover {
+    transform: scale(1.02); /* わずかに拡大するエフェクト */
+}
+
+/* レスポンシブデザイン */
+@media screen and (max-width: 768px) {
+    .works-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+/* ホバーエフェクト */
+.works-item {
+    cursor: pointer;
+}
+
+/* モーダル用のスタイル */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: var(--primary-color);
+    margin: 10% auto;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.close-modal {
+    color: var(--accent-color);
+    float: right;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    color: var(--secondary-color);
+}
+
+.modal ul {
+    margin-left: 2rem;
+    margin-top: 1rem;
+}
+
+/* スケジュールセクション */
+.section.schedule-section{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.schedule-description {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 30px;
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+    margin: auto;
+}
+
+.schedule-table {
+    background-color: white;
+    padding: 30px;
+    text-align: center;
+    width: 90%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    max-width: 500px;
+}
+
+@media screen and (max-width: 768px) {
+    .course-grid, .access-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ハンバーガーボタンのスタイル */
+.hamburger {
+    display: none;
+    font-size: 1.8rem;
+    background: none;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+/* レスポンシブ用のスタイル */
+@media screen and (max-width: 1068px) {
+    .nav-links {
+        display: none; /* 初期状態で非表示 */
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .nav-links.active {
+        display: flex; /* トグルで表示 */
+    }
+
+    .hamburger {
+        display: block; /* 小さい画面で表示 */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 5%;
+    }
+
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        flex-direction: column;
+        z-index: 1000;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu li {
+        margin: 0;
+        text-align: center;
+        padding: 15px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    .hamburger {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--secondary-color);
+    }
+}
+
+/* お問い合わせ用 */
+
+.tell-content {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 30px;
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+    margin: auto;
+}
+
+.social-links {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px;
+}
+
+.social-link {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 45%;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.social-link:hover {
+    transform: scale(1.05);
+}
+
+.line-link {
+    background-color: #00c300;
+    color: white;
+}
+
+.instagram-link {
+    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+    color: white;
+}
+
+.social-link img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+/* Googleカレンダー レスポンシブ対応 */
+.google-calendar-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* スムーズなスクロール (iOS) */
+}
+
+.google-calendar-container iframe {
+    width: 100%;
+    min-width: 300px;
+    height: 600px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* レスポンシブ対応 */
+@media screen and (max-width: 768px) {
+    .google-calendar-container {
+        width: 95%;
+        padding: 0 10px;
+    }
+
+    .google-calendar-container iframe {
+        height: 400px; /* モバイル画面では高さを調整 */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .google-calendar-container iframe {
+        height: 300px; /* さらに小さな画面では高さをさらに調整 */
+    }
+}
+
+/* スクロール可能な通知 */
+.calendar-scroll-notice {
+    display: none;
+    text-align: center;
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .calendar-scroll-notice {
+        display: block;
+    }
+}
