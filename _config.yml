@@ -17,3 +17,4 @@ plugins:
 
 exclude:
   - node_modules
+encoding: utf-8
