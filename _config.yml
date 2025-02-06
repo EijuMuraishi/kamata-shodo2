@@ -14,3 +14,6 @@ plugins:
   - jekyll-readme-index
   - jekyll-default-layout
   - jekyll-titles-from-headings
+
+exclude:
+  - node_modules
